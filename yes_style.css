@@ -1,23 +1,92 @@
+/* landing_page.css */
+
+/* Overall page styling with responsive background */
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background-color: lightblue; /* Changed from rgb(189, 225, 122) */
+  margin: 0;
+  padding: 0;
+  background-color: lightblue;  /* Changed from rgb(189, 225, 122) */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
-.header_text {
-    font-family: 'Nunito';
-    font-size: 50px;
-    font-weight: bold;
-    color: white;
-    text-align: center;
-    margin-top: 20px;
-    margin-bottom: 0px;
+/* A responsive container to hold the content */
+.container {
+  position: relative; /* So that absolute positioning inside will be relative to this container */
+  width: 90%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
+/* The container for the GIF */
 .gif_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;  /* Space between the GIF and the text/buttons */
+}
+
+/* The container for the question text */
+.question_container {
+  text-align: center;
+  margin-bottom: 2rem;  /* Adjust spacing as needed */
+}
+
+#question {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+}
+
+/* The container for the buttons.
+   It is set to relative so that any absolute repositioning (via JS)
+   on the buttons is based on this container. */
+.buttons {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Styling for both buttons */
+.btn {
+  background-color: #ffffff;
+  color: rgb(233, 48, 48);
+  padding: 15px 32px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.5s ease;
+  margin: 0 1rem;
+}
+
+/* Initially, both buttons are relatively positioned */
+#yesButton,
+#noButton {
+  position: relative;
+}
+
+/* Responsive adjustments for smaller screens */
+@media only screen and (max-width: 480px) {
+  #question {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  
+  .gif_container iframe {
+    width: 100%;
+    height: auto;
+  }
 }
