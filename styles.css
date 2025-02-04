@@ -1,19 +1,19 @@
 /* landing_page.css */
 
-/* Overall page styling */
+/* Overall page styling with responsive background */
 body {
   margin: 0;
   padding: 0;
-  background-color: lightblue;  /* Light blue background */
+  background-color: lightblue;  /* Changed from rgb(189, 225, 122) */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Main container for the landing page content */
+/* A responsive container to hold the content */
 .container {
-  position: relative; /* Allows absolute positioning within */
+  position: relative; /* So that absolute positioning inside will be relative to this container */
   width: 90%;
   max-width: 800px;
   display: flex;
@@ -22,32 +22,21 @@ body {
   padding: 1rem;
 }
 
-/* Header text styling (for any header elements that use this class) */
-.header_text {
-  font-family: 'Nunito', sans-serif;
-  font-size: 2rem;
-  font-weight: bold;
-  color: white;  /* White text */
-  text-align: center;
-  margin: 1rem 0;
-}
-
-/* Container for the GIF */
+/* The container for the GIF */
 .gif_container {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 2rem;  /* Space between GIF and following elements */
+  margin-bottom: 2rem;  /* Space between the GIF and the text/buttons */
 }
 
-/* Container for the question text (if separate from header_text) */
+/* The container for the question text */
 .question_container {
   text-align: center;
-  margin-bottom: 2rem;
+  margin-bottom: 2rem;  /* Adjust spacing as needed */
 }
 
-/* Specific styling for the question (if you use an element with id="question") */
 #question {
   font-family: 'Nunito', sans-serif;
   font-size: 2rem;
@@ -55,16 +44,18 @@ body {
   margin: 0;
 }
 
-/* Container for the buttons */
+/* The container for the buttons.
+   It is set to relative so that any absolute repositioning (via JS)
+   on the buttons is based on this container. */
 .buttons {
-  position: relative; /* Provides a reference for absolute positioning when needed */
+  position: relative;
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-/* General button styling */
+/* Styling for both buttons */
 .btn {
   background-color: #ffffff;
   color: rgb(233, 48, 48);
@@ -85,7 +76,6 @@ body {
 
 /* Responsive adjustments for smaller screens */
 @media only screen and (max-width: 480px) {
-  .header_text,
   #question {
     font-size: 1.5rem;
   }
