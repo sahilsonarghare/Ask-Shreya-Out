@@ -22,9 +22,8 @@ body {
     align-items: center;
 }
 
-/* Double the size of the gif */
-.gif_container iframe,
-.gif_container img {
+/* Double the size of the Tenor-embedded gif */
+.gif_container .tenor-gif-embed {
     transform: scale(2);
     transform-origin: center center;
 }
