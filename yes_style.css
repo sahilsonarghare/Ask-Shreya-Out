@@ -1,46 +1,88 @@
-/* yes_style.css */
+/* landing_page.css */
 
-/* Overall page styling for the celebration page */
+/* Overall page styling with responsive background */
 body {
   margin: 0;
   padding: 0;
-  background-color: lightblue;  /* Light blue background */
+  background-color: lightblue;  /* Changed from rgb(189, 225, 122) */
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
 }
 
-/* Main container for the celebration page content */
+/* A responsive container to hold the content */
 .container {
-  text-align: center;
-  padding: 1rem;
+  position: relative; /* So that absolute positioning inside will be relative to this container */
   width: 90%;
   max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem;
 }
 
-/* Header text styling */
-.header_text {
-  font-family: 'Nunito', sans-serif;
-  font-size: 2.5rem;  /* Adjust as needed for your design */
-  font-weight: bold;
-  color: white;  /* White text */
-  text-align: center;
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-}
-
-/* Container for the GIF */
+/* The container for the GIF */
 .gif_container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;  /* Space between the GIF and the text/buttons */
+}
+
+/* The container for the question text */
+.question_container {
+  text-align: center;
+  margin-bottom: 2rem;  /* Adjust spacing as needed */
+}
+
+#question {
+  font-family: 'Nunito', sans-serif;
+  font-size: 2rem;
+  color: white;
+  margin: 0;
+}
+
+/* The container for the buttons.
+   It is set to relative so that any absolute repositioning (via JS)
+   on the buttons is based on this container. */
+.buttons {
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
+/* Styling for both buttons */
+.btn {
+  background-color: #ffffff;
+  color: rgb(233, 48, 48);
+  padding: 15px 32px;
+  font-size: 16px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.5s ease;
+  margin: 0 1rem;
+}
+
+/* Initially, both buttons are relatively positioned */
+#yesButton,
+#noButton {
+  position: relative;
+}
+
 /* Responsive adjustments for smaller screens */
 @media only screen and (max-width: 480px) {
-  .header_text {
-    font-size: 1.8rem;
+  #question {
+    font-size: 1.5rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 14px;
   }
   
   .gif_container iframe {
